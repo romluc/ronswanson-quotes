@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './styles.css';
 
 const Quote = (props) => {
-  const [quote, setQuote] = useState(null);
+  const [quote, setQuote] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchQuote = async () => {
-      const response = await fetch(
-        `http://ron-swanson-quotes.herokuapp.com/v2/quotes`
-      );
-      const data = await response.json();
+    const fetchQuote = () => {
+      axios
+        .get('http://ron-swanson-quotes.herokuapp.com/v2/quotes')
+        .then((response) => {
+          const quote = response.data;
+          setQuote(quote);
+        });
 
-      setQuote(data);
       setLoading(false);
     };
     fetchQuote();

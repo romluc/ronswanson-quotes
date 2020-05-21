@@ -1,9 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-export default () => (
-  <img
-    src='https://scontent.ffor8-2.fna.fbcdn.net/v/t31.0-8/13063093_987628454624376_8509385960094022954_o.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=ZXi62_EENbcAX9olNZM&_nc_ht=scontent.ffor8-2.fna&oh=8695f3d8f3609b3f4cf21c1f29e43bf0&oe=5EED85BC'
-    alt='Ron Swanson'
-  />
-);
+import ron1 from './img/ron1.jpg';
+import ron2 from './img/ron2.jpg';
+import ron3 from './img/ron3.jpg';
+import ron4 from './img/ron4.jpg';
+import ron5 from './img/ron5.jpg';
+import ron6 from './img/ron6.jpg';
+
+const picsArr = [ron1, ron2, ron3, ron4, ron5, ron6];
+
+export default () => {
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  };
+
+  const [picture, setPicture] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const index = getRandomInt(1, 6);
+    console.log(index);
+    const picName = picsArr[index];
+    console.log(picName);
+
+    setPicture(picName);
+    setLoading(false);
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        '<h2>Loading... </h2>'
+      ) : (
+        <img src={picture} alt='Ron Swanson' />
+      )}
+    </>
+  );
+};

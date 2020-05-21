@@ -22,10 +22,7 @@ export default () => {
 
   useEffect(() => {
     const index = getRandomInt(1, 6);
-    console.log(index);
     const picName = picsArr[index];
-    console.log(picName);
-
     setPicture(picName);
     setLoading(false);
   }, []);

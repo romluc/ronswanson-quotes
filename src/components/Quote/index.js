@@ -18,15 +18,7 @@ const Quote = (props) => {
     fetchQuote();
   }, []);
 
-  return (
-    <>
-      {loading ? (
-        <h2 className='quote'>Loading...</h2>
-      ) : (
-        <h2 className='quote'>{quote}</h2>
-      )}
-    </>
-  );
+  return <>{<h2 className='quote'>{quote}</h2>}</>;
 };
 
 export default Quote;

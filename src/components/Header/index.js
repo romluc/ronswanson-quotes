@@ -7,7 +7,7 @@ const Header = (props) => {
     <div className='header-container'>
       <img className='header-pic' src={pic} alt='Swanson drawing round' />
       <div className='titles-container'>
-        <h1 {...props}>Hey, son!</h1>
+        <h1>Hey, son!</h1>
         <h2>Check out my killer quotes!</h2>
       </div>
     </div>

@@ -7,7 +7,7 @@
 ## Features:
 
 - React Hooks
-- Fetch API
+- Axios
 - React-toastify
 
 ---

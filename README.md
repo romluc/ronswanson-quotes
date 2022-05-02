@@ -8,6 +8,7 @@
 
 - React Hooks
 - Fetch API
+- React-toastify
 
 ---
 
@@ -17,5 +18,6 @@
 
 - [ ] Styling with styled-components
 - [ ] Server-side rendering
+
 
 by [romluc](https://github.com/romluc) 👋🏻
